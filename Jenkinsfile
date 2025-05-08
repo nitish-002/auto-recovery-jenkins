@@ -3,7 +3,7 @@ def maxRetries = 2
 
 pipeline {
     agent any
-    
+    https://github.com/nitish-002/auto-recovery-jenkins.git
     options {
         timestamps()
     }
@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git url:'https://github.com/nitish-002/auto-recovery-jenkins.git', branch:'main'
+                echo "Checkout Complete"
             }
         }
         
